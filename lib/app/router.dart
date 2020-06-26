@@ -1,15 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mycustomers/ui/views/home/home_view.dart';
-import 'package:mycustomers/ui/views/phone/phone_view.dart';
+import 'package:mycustomers/ui/views/main/main_view.dart';
 import 'package:mycustomers/ui/views/startup/startup_view.dart';
-import 'package:mycustomers/ui/views/otp/otp_view.dart';
 
 abstract class Routes {
-  static const startupViewRoute = '/';
-  static const homeViewRoute = '/home';
-  static const phoneViewRoute = '/phone';
-  static const otpViewRoute = '/otp';
+  static const startupViewRoute = '/startup';
+  static const homeViewRoute = '/';
+  static const onboardingViewRoute = '/onboarding';
+  static const languageViewRoute = '/language';
+  static const authenticationViewRoute = '/auth';
+  static const nameViewRoute = '/name';
+  static const businessViewRoute = '/business';
+  static const mainViewRoute = '/main';
+  static const addcustomerRoute = '/addcustomer';
+  static const addCustomerManually = '/addCusMan';
+  static const detailsViewRoute = '/details';
+  static const supportViewRoute = '/support';
 }
 
 class Router {
@@ -20,21 +26,65 @@ class Router {
           builder: (context) => StartupView(),
           settings: settings,
         );
-      case Routes.homeViewRoute:
+      // case Routes.onboardingViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => OnboardingView(),
+      //     settings: settings,
+      //   );
+      // case Routes.languageViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => LanguageView(),
+      //     settings: settings,
+      //   );
+      // case Routes.addcustomerRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => AddCustomerView(),
+      //   );
+      // case Routes.languageViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => LanguageView(),
+      //     settings: settings,
+      //   );
+      // case Routes.authenticationViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => AuthenticationView(),
+      //     settings: settings,
+      //   );
+      // case Routes.nameViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => NameView(),
+      //     settings: settings,
+      //   );
+      // case Routes.businessViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => BusinessView(),
+      //     settings: settings,
+      //   );
+      // case Routes.supportViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => SupportPageView(),
+      //     settings: settings,
+      //   );
+      case Routes.mainViewRoute:
         return CupertinoPageRoute<dynamic>(
-          builder: (context) => HomeView(),
+          builder: (context) => MainView(),
           settings: settings,
         );
-      case Routes.phoneViewRoute:
-        return CupertinoPageRoute<dynamic>(
-          builder: (context) => PhoneView(),
-          settings: settings,
-        );
-      case Routes.otpViewRoute:
-        return CupertinoPageRoute<dynamic>(
-          builder: (context) => OTPView(),
-          settings: settings,
-        );
+      // case Routes.homeViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => HomeView(),
+      //     settings: settings,
+      //   );
+      // case Routes.detailsViewRoute:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => DetailsView(),
+      //     settings: settings,
+      //   );
+      // case Routes.addCustomerManually:
+      //   return CupertinoPageRoute<dynamic>(
+      //     builder: (context) => AddCustomerManuallyView(),
+      //     settings: settings,
+      //   );
       default:
         return unknownRoutePage(settings.name);
     }
